@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,physics,xfrac,nicefrac}
+\usepackage{standalone}
+\usepackage[left=1.5cm,top=1.5cm,right=1.5cm,bottom=1.5cm]{geometry}
+\usepackage[indentfirst=true]{quoting}
+\usepackage{xcolor, soul}
+\usepackage{enumitem}
+\definecolor{HighlightGray}{cmyk}{0,0,0,0.07}
+\sethlcolor{HighlightGray}
+ 
+\title{Singular Value Decomposition}
+\author{John Bortins}
+ 
+\begin{document}
+
+\maketitle{}
+
+\begin{align*}
+    A=      & \begin{pmatrix}
+        3 & 4 \\0&5\\
+    \end{pmatrix}                                                                                                                \\
+    A^T=    & \begin{pmatrix}
+        3 & 0 \\4&5\\
+    \end{pmatrix}                                                                                                                \\
+    A^T A=  & \begin{pmatrix}
+        3 & 0 \\4&5\\
+    \end{pmatrix}\begin{pmatrix}
+        3 & 4 \\0&5\\
+    \end{pmatrix}=\begin{pmatrix}
+        9 & 12 \\12&41\\
+    \end{pmatrix}                                                             \\
+    A^T Av= & \begin{pmatrix}
+        9 & 12 \\12&41\\
+    \end{pmatrix}\begin{pmatrix}
+        v_1 \\v_2\\
+    \end{pmatrix}=\begin{pmatrix}
+        9v_1 + 12v_2 \\12v_1 +41v_2
+    \end{pmatrix}=\lambda\begin{pmatrix}
+        v_1 \\v_2
+    \end{pmatrix}=\begin{pmatrix}
+        \lambda v_1 \\\lambda v_2
+    \end{pmatrix} \\
+\end{align*}
+Find the eigenvalues $\lambda$ by solving the equations.
+\begin{align*}
+    \begin{pmatrix}
+        (9-\lambda) & 12 \\12 &(41-\lambda)
+    \end{pmatrix}\begin{pmatrix}
+        v_1 \\v_2
+    \end{pmatrix} & =  \begin{pmatrix}
+        0 \\0
+    \end{pmatrix}    \\
+    (9-\lambda)(41-\lambda)-144                          & =                           0    \\
+    \lambda^2 -50\lambda+225                             & =                              0 \\
+    (\lambda-5)(\lambda-45)                              & =0
+\end{align*}
+\begin{align*}
+    \qfor*\lambda=5\qquad\begin{pmatrix}
+        4 & 12 \\12 &36
+    \end{pmatrix}\begin{pmatrix}
+        v_1 \\v_2
+    \end{pmatrix}  & =  \begin{pmatrix}
+        0 \\0
+    \end{pmatrix}\implies v_1+3v_2=0 \\
+    \qq*{the corresponding eigenvectors are nonzero multiples of}              & \begin{pmatrix}
+        3 \\ -1
+    \end{pmatrix}                       \\                                                                                              \\
+    \qfor*\lambda=45\qquad\begin{pmatrix}
+        -36 & 12 \\12 &-4
+    \end{pmatrix}\begin{pmatrix}
+        v_1 \\v_2
+    \end{pmatrix} & =  \begin{pmatrix}
+        0 \\0
+    \end{pmatrix}\implies 3v_1-v_2=0 \\
+    \qq*{the corresponding eigenvectors are nonzero multiples of}              & \begin{pmatrix}
+        1 \\ 3
+    \end{pmatrix}                       \\                                                                                              \\
+\end{align*}
+\end{document}
