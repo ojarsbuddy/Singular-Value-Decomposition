@@ -1,3 +1,3 @@
 # Singular Value Decomposition
 
-Initial commit.
+Working out some of the details in Singular Value Decomposition.
