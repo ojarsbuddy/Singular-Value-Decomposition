@@ -16,7 +16,7 @@
 \maketitle{}
 
 \section{Introduction}
-Start with some matrix $A$ and its transpose $A^T$. We are going for $A=U\Sigma V^T$ with $U^T U=I$ and $V^T V=I$. Now think of $A^T AV=A^T U\Sigma$ in  order to discover eigenvalues $\lambda$. Consider a column vector $v_i$ of $V$, then $A^T Av_i=\lambda v_i$ can pick off the eigenvalues.
+Start with some matrix $A$ and its transpose $A^T$. We are going for $A=U\Sigma V^T$ with $U^T U=I$ and $V^T V=I$. Now think of $A^T AV=A^T U\Sigma$ in  order to discover eigenvalues $\lambda$, because $A^T A$ is square, symmetric, and  nonnegtive definite. Consider a column vector $v_i$ of $V$, then $A^T Av_i=\lambda_i v_i$ can pick off the eigenvalues.
 
 To find $u_i$ in the column space, note that $AV=U\Sigma$ and $=u_i\sigma_i$ where $\lambda_i=\sigma_i^2$.
 \section{An Example }
