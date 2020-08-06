@@ -16,24 +16,38 @@
 \maketitle{}
 
 \section{Introduction}
-Start with some matrix $A$ and its transpose $A^T$. We are going for $A=U\Sigma V^T$ with $U^T U=I$ and $V^T V=I$. Now think of $A^T AV=A^T U\Sigma$ in  order to discover eigenvalues $\lambda$, because $A^T A$ is square, symmetric, and  nonnegtive definite. Consider a column vector $v_i$ of $V$, then $A^T Av_i=\lambda_i v_i$ can pick off the eigenvalues.
+Start with some matrix $A$ and its transpose $A^T$. Both $A^T A$ and $AA^T$ are square, symmetric, and  nonnegative definite.
 
-To find $u_i$ in the column space, note that $AV=U\Sigma$ and $=u_i\sigma_i$ where $\lambda_i=\sigma_i^2$.
+We factor any $A=U\Sigma V^T$ with $U^T U=I$, $\Sigma$ diagonal and $V^T V=I$. Now think of $A^T A=(V\Sigma^T U^T)(U\Sigma V^T)=V\Sigma^T \Sigma V^T$ in  order to discover eigenvalues $\lambda$ of $A^T A$. Note that $A$ has two sets of singular vectors (the eigenvectors of $A^T A$ and$AA^T$).
+\begin{align*}
+    A      & =U\Sigma V^T\qand A^T=V\Sigma^T U^T \\
+    A^T A  & =(V\Sigma^T U^T)(U\Sigma V^T)       \\
+           & =V\Sigma^T \Sigma V^T               \\
+           & =V\Lambda V^T                       \\
+    A^T AV & =V\Lambda
+\end{align*}
+
+Consider $A^T AV=V\Lambda$ and choose some column vector $v_i$ of $V$, then $A^T Av_i=\lambda_i v_i$ can pick off the eigenvalues. Both $A^T A$ and $AA^T$ have the same set of eigenvalues, which means there is one set of singular values, where $\lambda_i=\sigma_i^2$.
+
+To find $u_i$ in the column space of $U$, note that $AV=U\Sigma$ and $Av_i=u_i\sigma_i$.
+
+Recall that the general quintic cannot be solved by radicals per Abel and Galois supplied the conditions by which higher order ($>4$) equations can be so solved.
+
 \section{An Example }
 \begin{align*}
     A=      & \begin{pmatrix}
         3 & 4 \\0&5\\
-    \end{pmatrix}                                                                                                                \\
+    \end{pmatrix}                                                                                                                 \\
     A^T=    & \begin{pmatrix}
         3 & 0 \\4&5\\
-    \end{pmatrix}                                                                                                                \\
+    \end{pmatrix}                                                                                                                 \\
     A^T A=  & \begin{pmatrix}
         3 & 0 \\4&5\\
     \end{pmatrix}\begin{pmatrix}
         3 & 4 \\0&5\\
     \end{pmatrix}=\begin{pmatrix}
         9 & 12 \\12&41\\
-    \end{pmatrix}                                                             \\
+    \end{pmatrix}                                                              \\
     A^T Av= & \begin{pmatrix}
         9 & 12 \\12&41\\
     \end{pmatrix}\begin{pmatrix}
@@ -48,11 +62,9 @@ To find $u_i$ in the column space, note that $AV=U\Sigma$ and $=u_i\sigma_i$ whe
 \end{align*}
 Find the eigenvalues $\lambda$ by solving the equations.
 \begin{align*}
-    \begin{pmatrix}
+    (A^T A-\lambda_i I)v_i=\begin{pmatrix}
         (9-\lambda) & 12 \\12 &(41-\lambda)
-    \end{pmatrix}\begin{pmatrix}
-        v_x \\v_y
-    \end{pmatrix} & =  \begin{pmatrix}
+    \end{pmatrix}v_i & =  \begin{pmatrix}
         0 \\0
     \end{pmatrix}    \\
     (9-\lambda)(41-\lambda)-144                          & =                           0    \\
