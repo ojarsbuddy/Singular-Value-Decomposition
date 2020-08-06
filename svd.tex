@@ -35,30 +35,22 @@ Recall that the general quintic cannot be solved by radicals per Abel and Galois
 
 \section{An Example }
 \begin{align*}
-    A=      & \begin{pmatrix}
+    A=        & \begin{pmatrix}
         3 & 4 \\0&5\\
-    \end{pmatrix}                                                                                                                 \\
-    A^T=    & \begin{pmatrix}
+    \end{pmatrix}                                                    \\
+    A^T=      & \begin{pmatrix}
         3 & 0 \\4&5\\
-    \end{pmatrix}                                                                                                                 \\
-    A^T A=  & \begin{pmatrix}
+    \end{pmatrix}                                                    \\
+    A^T A=    & \begin{pmatrix}
         3 & 0 \\4&5\\
     \end{pmatrix}\begin{pmatrix}
         3 & 4 \\0&5\\
     \end{pmatrix}=\begin{pmatrix}
         9 & 12 \\12&41\\
-    \end{pmatrix}                                                              \\
-    A^T Av= & \begin{pmatrix}
-        9 & 12 \\12&41\\
-    \end{pmatrix}\begin{pmatrix}
-        v_x \\v_y\\
-    \end{pmatrix}=\begin{pmatrix}
-        9v_x + 12v_y \\12v_x +41v_y
-    \end{pmatrix}=\lambda\begin{pmatrix}
-        v_x \\v_y
-    \end{pmatrix}=\begin{pmatrix}
-        \lambda v_x \\\lambda v_y
     \end{pmatrix} \\
+    A^T Av_i= & \begin{pmatrix}
+        9 & 12 \\12&41\\
+    \end{pmatrix}v_i=\lambda_i  v_i                                  \\
 \end{align*}
 Find the eigenvalues $\lambda$ by solving the equations.
 \begin{align*}
@@ -66,10 +58,10 @@ Find the eigenvalues $\lambda$ by solving the equations.
         (9-\lambda) & 12 \\12 &(41-\lambda)
     \end{pmatrix}v_i & =  \begin{pmatrix}
         0 \\0
-    \end{pmatrix}    \\
-    (9-\lambda)(41-\lambda)-144                          & =                           0    \\
-    \lambda^2 -50\lambda+225                             & =                              0 \\
-    (\lambda-45)(\lambda-5)                              & =0
+    \end{pmatrix}     \\
+    (9-\lambda)(41-\lambda)-144                         & =                           0    \\
+    \lambda^2 -50\lambda+225                            & =                              0 \\
+    (\lambda-45)(\lambda-5)                             & =0
 \end{align*}
 \begin{align*}
     \qq*{For}\lambda_1=45\qquad\begin{pmatrix}
